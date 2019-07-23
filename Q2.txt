@@ -1,0 +1,44 @@
+Step 1: We stat by creating a project.
+
+Step 2: We then create a workspace.
+
+Step 3: Now add an AWS account to monitor
+
+Step 4: Choose an existing role having "ReadOnlyAccess" 
+
+Step 5: Include this arn while adding AWS in GCP project.
+
+Step 6: We then create a service account for the connector project.
+
+Step 7: The service account must have 'monitoring metric writer' and 'logs writer' roles attached
+
+Step 8: The private key is selected in 'json format', and downloaded.
+
+Step 9: An EC2 instance is launched.
+
+Step 10: SSH connection of the instance is established through Mobaxterm
+
+Step 11: The json file that was downloaded is uploaded to the EC2 instance.
+
+Step 12: Enter the following commands:
+       GOOGLE_APPLICATION_CREDENTIALS="/etc/google/auth/application_default_credentials.json"
+       sudo chown root:root "$GOOGLE_APPLICATION_CREDENTIALS"
+       sudo chmod 0400 "$GOOGLE_APPLICATION_CREDENTIALS"
+
+Step 13: Install Stackdriver monitoring and logging agents by entering following commands:
+    curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh
+    sudo bash install-monitoring-agent.sh
+    curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
+    sudo bash install-logging-agent.sh --structured
+    
+
+Step 14: Go back to the Stackdriver Monitoring console.
+
+Step 15: Create uptime check
+
+Step 16: Provide the url of the EC2 instance and test it.
+
+Step 17: Create an alert of the uptime check
+       
+
+

@@ -1,0 +1,19 @@
+Step 1: Create an instance with following start up script :-
+        #! /bin/bash/
+        sudo su
+        apt-get update
+        apt-get install -y apache2
+        echo '<h1>This is Arun's Instance</h1>' > /var/www/html/index.html
+        EOF
+
+Step 2: Through External IP, access the Apache web-server
+
+Step 3: We can see that "This is Arun's Instance"
+
+Step 4: Now Enter the following command in the CLI:
+       gcloud compute instances stop rv-arun-gcp2-q3
+
+Step 5: Start the instance again by entering following command in the CLI
+       gcloud compute instances start rv-arun-gcp2-q3
+
+Step 6: The external IP address was changed 
